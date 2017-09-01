@@ -19,7 +19,7 @@ var articleOne = {
    heading:'article one ',
    content: `
    
-   <h1>hii this is article one</h1>
+  
         <p>
         hii this is article one hii this is article one hii this is article one hii this is article one
         
@@ -34,45 +34,45 @@ var articleOne = {
         </p>
    `        
 } ;
+function createmplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var content=data.content;
 
-var htmltemplate ={
-  
-   <html>
-<head>
-<title>$[title]</title>
-
-<link rel="stylesheet" href="/style.css" />
-
-</head>
-
-<body>
-<div id="container">    
-        <h1>hii this is article one</h1>
-        <p>
-        hii this is article one hii this is article one hii this is article one hii this is article one
+        var htmltemplate =
+            `
+          <!Doctype html>
+         <html>
+        <head>
+        <title>
         
-        hii this is article one hii this is article one hii this is article one hii this is article one
+        ${title}
         
-        hii this is article one hii this is article one hii this is article one hii this is article one
+        </title>
         
-        hii this is article one hii this is article one hii this is article one hii this is article one
+        <link rel="stylesheet" href="/style.css" />
         
-        hii this is article one hii this is article one hii this is article one hii this is article one
+        </head>
         
-        </p>
-</div>
-</body>
-</html>
- 
-    
-    
-};
-
+        <body>
+        <div id="container">    
+                <h1>${heading}</h1>
+                ${content}
+        </div>
+        </body>
+        </html>
+         
+            
+            
+        
+        `;
+        return htmltemplate;
+}
 app.get('/style.css',function(req,res){
- res.sendFile(path.join(__dirname,'style.css'))
+ res.sendFile(path.join(__dirname,'style.css'));
 });
 app.get('/article-one',function(req,res){
-   res.sendFile(path.join(__dirname,'article-one.html'));
+   res.send(createtemplate(articleOne));
 });
 app.get('/article-two',function(req,res){
    res.sendFile(path.join(__dirname,'article-two.html')); 
