@@ -1,8 +1,9 @@
 body{
      font-weight:bold;
      background:grey;
+     text-align:center;
 }
 #container{
-margin:0px auto;
-backgroound: white;
+margin:0 auto;
+background: white;
 }
