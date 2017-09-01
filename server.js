@@ -12,6 +12,62 @@ app.get('/',function (req,res){
    res.sendFile(path.join(__dirname,'ui','index.html' 
    ));
 });
+
+var articleOne = {
+    
+   title: 'article one | rangaraju ',
+   heading:'article one ',
+   content: `
+   
+   <h1>hii this is article one</h1>
+        <p>
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        </p>
+   `        
+} ;
+
+var htmltemplate ={
+  
+   <html>
+<head>
+<title>$[title]</title>
+
+<link rel="stylesheet" href="/style.css" />
+
+</head>
+
+<body>
+<div id="container">    
+        <h1>hii this is article one</h1>
+        <p>
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        hii this is article one hii this is article one hii this is article one hii this is article one
+        
+        </p>
+</div>
+</body>
+</html>
+ 
+    
+    
+};
+
 app.get('/style.css',function(req,res){
  res.sendFile(path.join(__dirname,'style.css'))
 });
