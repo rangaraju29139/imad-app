@@ -19,8 +19,8 @@ console.log('Loaded!');
          if(request.status === 200){
              
              var counter= request.responseText;
-             var span =document.getElementById('counter');
-             span.innerHTML = counter.toString();
+             var count =document.getElementById('counter');
+             count.innerHTML = counter.toString();
          }
          
      }  
